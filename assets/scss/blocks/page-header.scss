@@ -1,0 +1,212 @@
+.page-header {
+    &__top {
+        display: flex;
+        justify-content: flex-end;
+        background-color: #44667c;
+        height: 28px;
+    }
+    &__top-nav {
+        display: flex;
+        align-items: center;
+    }
+
+    &__top-nav-item {
+        a {
+            padding-top: 4px;
+            padding-bottom: 4px;
+            padding-left: 12px;
+            padding-right: 12px;
+            
+            font-size: 11px;
+            color: #fff;
+            display: block;
+            &:hover {
+                text-decoration: none;
+                background-color: #d8770e;
+            }
+        }
+        &.active {
+            a {
+                background-color: #d8770e;
+            }
+        }
+    }
+
+    &__top-socials {
+        display: flex;
+        align-items: center;
+    }
+
+    &__top-socials-item {
+        a {
+            padding-top: 6px;
+            padding-bottom: 6px;
+            padding-left: 7px;
+            padding-right: 7px;
+
+            display: block;
+            color: #fff;
+            font-size: 16px;
+            &:hover {
+                text-decoration: none;
+                background-color: #d8770e;
+            }
+        }
+    }
+
+    &__top-search-link {
+        padding-left: 12px;
+        padding-right: 20px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+
+        display: block;
+        color: #fff;
+        font-weight: 700;
+        &:hover {
+            text-decoration: none;
+            background-color: #d8770e;
+            color: #fff;
+        }
+        &.jq-dropdown-open {
+            background-color: #d8770e;
+        }
+    }
+
+    &__row {
+        padding-top: 25px;
+        padding-bottom: 4px;
+        padding-left: 35px;
+        padding-right: 35px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        a {
+            width: 200px;
+            height: 91px;
+
+            display: block;
+            transition: all 0.2s ease-in-out;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+            &:hover {
+                text-decoration: none;
+                opacity: 0.7;
+            }
+        }
+    }
+
+    &__nav {
+        display: flex;
+        align-items: center;
+    }
+
+    &__nav-item {
+        a {
+            font-size: 14px;
+            font-weight: 700;
+
+            display: flex;
+            align-items: center;
+            position: relative;
+            color: #000;
+
+            transition: all 0.2s ease-in-out;
+            i {
+                position: absolute;
+                top: 50%;
+                right: -14px;
+
+                transform: translateY(-50%);
+
+                font-size: 13px;
+            }
+            &:hover {
+                text-decoration: none;
+                opacity: 0.6;
+            }
+        }
+        &:not(:last-child) {
+            margin-right: 29px;
+        }
+        &:last-child {
+            a {
+                i {
+                    font-size: 17px;
+                    position: relative;
+                    transform: none;
+                    top: 0;
+                    right: 0;
+
+                    margin-left: 5px;
+                    margin-top: -4px;    
+                }
+            }
+        }
+    }
+
+    &__top-search-dropdown {
+        width: 155px !important;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        margin-left: -107px !important;
+        position: relative;
+        input {
+            width: 100%;
+            height: 50px;
+            border: none;
+            background-color: #f9f9f9;
+
+            padding-top: 14px;
+            padding-bottom: 14px;
+            padding-left: 10px;
+            padding-right: 40px;
+
+            font-size: 13px;
+            &:focus {
+                outline: none;
+            }
+            &::placeholder {
+                font-size: 12px;
+            }
+        }
+        button {
+            @include reset-button();
+            padding: 0;
+            position: absolute;
+            top: 50%;
+            right: 15px;
+
+            transform: translateY(-50%);
+
+            width: 20px;
+            height: 20px;
+            transition: all 0.2s ease-in-out;
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+    }
+
+    &__nav-item-dropdown {
+        width: fit-content !important;
+        margin-top: 10px !important;
+        max-width: 230px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,89 @@
+@font-face {
+	font-family: "ico-font";
+	src: url('../fonts/icofont/ico-font.eot?1652217329');
+	src: url('../fonts/icofont/ico-font.eot??1652217329#iefix') format('eot'),
+		url('../fonts/icofont/ico-font.woff2?1652217329') format('woff2'),
+		url('../fonts/icofont/ico-font.woff?1652217329') format('woff'),
+		url('../fonts/icofont/ico-font.ttf?1652217329') format('truetype'),
+		url('../fonts/icofont/ico-font.svg?1652217329#ico-font') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@mixin icon-styles {
+	font-family: "ico-font";
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	// speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+	text-decoration: none;
+	text-transform: none;
+
+	line-height: 1;
+
+	&:before {
+		display: block;
+		line-height: 1;
+	}
+}
+
+%icon {
+	@include icon-styles;
+}
+
+@function icon-char($filename) {
+	$char: "";
+
+	@if $filename == arrow {
+		$char: "\E001";
+	}
+	@if $filename == facebook {
+		$char: "\E002";
+	}
+	@if $filename == link {
+		$char: "\E003";
+	}
+	@if $filename == linkedin {
+		$char: "\E004";
+	}
+	@if $filename == search {
+		$char: "\E005";
+	}
+	@if $filename == twitter {
+		$char: "\E006";
+	}
+
+	@return $char;
+}
+
+@mixin icon($filename, $insert: before, $extend: true) {
+	&:#{$insert} {
+		@if $extend {
+			@extend %icon;
+		} @else {
+			@include icon-styles;
+		}
+		content: icon-char($filename);
+	}
+}
+
+.icon-arrow {
+	@include icon(arrow);
+}
+.icon-facebook {
+	@include icon(facebook);
+}
+.icon-link {
+	@include icon(link);
+}
+.icon-linkedin {
+	@include icon(linkedin);
+}
+.icon-search {
+	@include icon(search);
+}
+.icon-twitter {
+	@include icon(twitter);
+}
